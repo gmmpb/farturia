@@ -1,23 +1,32 @@
-[gd_scene load_steps=19 format=3 uid="uid://jj6r7al1gfb2"]
+[gd_scene load_steps=24 format=3 uid="uid://jj6r7al1gfb2"]
 
-[ext_resource type="Script" uid="uid://bn2lssnrx1sg0" path="res://assets/nature/CameraRig.gd" id="1_aedc1"]
 [ext_resource type="ArrayMesh" uid="uid://c4655h4vcspla" path="res://assets/field/tallGrass.res" id="2_5cbmc"]
+[ext_resource type="Shader" uid="uid://7gg5knpjm3to" path="res://assets/nature/color_limiter.gdshader" id="2_kmeru"]
 [ext_resource type="Shader" uid="uid://b6ljxynk4qvcx" path="res://assets/nature/field_shader.gdshader" id="2_kp5o4"]
+[ext_resource type="Shader" uid="uid://b3ba3ag2nxbfk" path="res://assets/nature/depth_lines.gdshader" id="3_kmeru"]
 [ext_resource type="ArrayMesh" uid="uid://8jq6gfbv0c25" path="res://assets/field/shortGrass.res" id="3_kp5o4"]
 [ext_resource type="MeshLibrary" uid="uid://bwubs7ha4f185" path="res://assets/nature/mesh/nature2.tres" id="4_xg4kf"]
 [ext_resource type="MeshLibrary" uid="uid://cewlnupl4a4d7" path="res://assets/nature/mesh/starter.tres" id="5_kmeru"]
-[ext_resource type="Shader" uid="uid://cibrioecy8epp" path="res://assets/nature/edges.gdshader" id="6_s4hbr"]
 [ext_resource type="PackedScene" uid="uid://d33wsgplse56t" path="res://assets/character/player.tscn" id="7_s4hbr"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cqtwa"]
+shader = ExtResource("2_kmeru")
+
+[sub_resource type="QuadMesh" id="QuadMesh_obtf1"]
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8k5n3"]
+shader = ExtResource("2_kmeru")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xg4kf"]
+size = Vector2(4, 4)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kmeru"]
-shader = ExtResource("6_s4hbr")
-shader_parameter/outline_thresh = 0.4
-shader_parameter/outline_soft = 0.25
-shader_parameter/outline_color = Vector4(0, 0, 0, 1)
-shader_parameter/glow_thresh = 0.45
-shader_parameter/glow_soft = 0.25
-shader_parameter/glow_boost = 1.0
-shader_parameter/glow_tint = Vector3(1, 1, 1)
+render_priority = 0
+shader = ExtResource("3_kmeru")
+shader_parameter/shadow_thickness = 2.045
+shader_parameter/darken_factor = 2.4
+shader_parameter/edge_strength = 0.13
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aedc1"]
 sky_top_color = Color(0.101475, 0.494273, 0.612326, 1)
@@ -40,6 +49,9 @@ volumetric_fog_density = 0.0079
 volumetric_fog_emission_energy = 173.46
 volumetric_fog_gi_inject = 2.07
 volumetric_fog_anisotropy = 0.19
+
+[sub_resource type="Compositor" id="Compositor_obtf1"]
+compositor_effects = Array[CompositorEffect]([null, null])
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aedc1"]
 render_priority = 0
@@ -71,49 +83,63 @@ buffer = PackedFloat32Array(0.432477, 0.0145997, -0.869261, -8.33893, -0.0424173
 [node name="Node3D" type="Node3D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_cqtwa")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 320.0
-offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(960, 540)
+size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
 [node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_s4hbr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96434, 0.971144, -19.721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.77946, 2.22627, -19.6954)
 
-[node name="CameraRig" type="Node3D" parent="SubViewportContainer/SubViewport/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96434, -0.971144, 19.721)
-script = ExtResource("1_aedc1")
+[node name="SpringArm3D" type="SpringArm3D" parent="SubViewportContainer/SubViewport/Player"]
+transform = Transform3D(0.887011, -0.29433, 0.355783, 0, 0.770513, 0.637424, -0.461749, -0.565402, 0.683454, 0, 3.145, 3.64)
+spring_length = 40.015
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Player/CameraRig"]
-transform = Transform3D(-0.704634, 0.456103, -0.543563, 0, 0.766044, 0.642788, 0.709571, 0.45293, -0.539781, -29.0199, 18.4894, -23.253)
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Player/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96434, 16.2299, 79.2839)
 projection = 1
 current = true
-fov = 70.0
-size = 19.722
+fov = 27.6
+size = 23.499
+near = 0.068
 far = 1346.35
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
-
-[node name="edges" type="ColorRect" parent="CanvasLayer"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Player/SpringArm3D/Camera3D"]
+transform = Transform3D(-9.99051, 0, 0.435497, 0.0459829, 9.94411, 1.05487, -0.433063, 1.05587, -9.93467, -0.185, -0.946308, -5.8177)
 visible = false
-material = SubResource("ShaderMaterial_kmeru")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+mesh = SubResource("QuadMesh_obtf1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8k5n3")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Player/SpringArm3D/Camera3D"]
+transform = Transform3D(10, 0, 0, 0, 10, -4.76837e-07, 0, 4.76837e-07, 10, 0, 2.79896, -9.5629)
+visible = false
+mesh = SubResource("QuadMesh_xg4kf")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_kmeru")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_xg4kf")
+compositor = SubResource("Compositor_obtf1")
+
+[node name="Plane" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+mesh = SubResource("PlaneMesh_kmeru")
+skeleton = NodePath("../../..")
+
+[node name="Grass" type="MultiMeshInstance3D" parent="SubViewportContainer/SubViewport"]
+visible = false
+multimesh = SubResource("MultiMesh_cqtwa")
+
+[node name="shortGrass" type="MultiMeshInstance3D" parent="SubViewportContainer/SubViewport"]
+multimesh = SubResource("MultiMesh_obtf1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.589247, 0.507464, -0.628704, 0.0641062, 0.805056, 0.589725, 0.805406, 0.30719, -0.506908, -176.275, 76.1124, -123.991)
@@ -134,15 +160,6 @@ data = {
 "cells": PackedInt32Array(65534, 65535, 851976, 65534, 0, 1441801, 0, 0, 655379, 0, 65535, 1441796)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
-
-[node name="Plane" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_kmeru")
-
-[node name="Grass" type="MultiMeshInstance3D" parent="."]
-multimesh = SubResource("MultiMesh_cqtwa")
-
-[node name="shortGrass" type="MultiMeshInstance3D" parent="."]
-multimesh = SubResource("MultiMesh_obtf1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_xg4kf")
