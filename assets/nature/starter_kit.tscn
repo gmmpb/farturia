@@ -1,0 +1,108 @@
+[gd_scene load_steps=27 format=3 uid="uid://322tcmeit4rh"]
+
+[ext_resource type="PackedScene" uid="uid://bqxa36hkpl1hj" path="res://assets/starter_kit/banner.glb" id="1_dpcup"]
+[ext_resource type="PackedScene" uid="uid://cvxmmqmklt672" path="res://assets/starter_kit/block.glb" id="2_54e3g"]
+[ext_resource type="PackedScene" uid="uid://cnw5rs5qiyxnw" path="res://assets/starter_kit/border-corner.glb" id="3_t8l1h"]
+[ext_resource type="PackedScene" uid="uid://dr26h67bx4fi7" path="res://assets/starter_kit/border-straight.glb" id="4_tr1fu"]
+[ext_resource type="PackedScene" uid="uid://dp4f8paatagro" path="res://assets/starter_kit/bricks.glb" id="5_d6ujd"]
+[ext_resource type="PackedScene" uid="uid://b3nc42jy23m0y" path="res://assets/starter_kit/character-soldier.glb" id="6_xtfon"]
+[ext_resource type="PackedScene" uid="uid://cddf0g7tomost" path="res://assets/starter_kit/column-damaged.glb" id="7_cg1vd"]
+[ext_resource type="PackedScene" uid="uid://basbm4qaiq6k5" path="res://assets/starter_kit/column.glb" id="8_6xomm"]
+[ext_resource type="PackedScene" uid="uid://ccjy7ui6xlri8" path="res://assets/starter_kit/floor-detail.glb" id="9_tjj1n"]
+[ext_resource type="PackedScene" uid="uid://cjst8buukppv7" path="res://assets/starter_kit/floor.glb" id="10_uq4pb"]
+[ext_resource type="PackedScene" uid="uid://bmvk4gdgl4tfp" path="res://assets/starter_kit/grass.dae" id="11_bcru2"]
+[ext_resource type="PackedScene" uid="uid://p77k28s07gsh" path="res://assets/starter_kit/grass_large.dae" id="12_8ofhm"]
+[ext_resource type="PackedScene" uid="uid://cjoa7nu67sitf" path="res://assets/starter_kit/grass_leafs.dae" id="13_y1idv"]
+[ext_resource type="PackedScene" uid="uid://cwuxk4micj33e" path="res://assets/starter_kit/ground_grass.dae" id="14_fsfsw"]
+[ext_resource type="PackedScene" uid="uid://gqc2ys501ji8" path="res://assets/starter_kit/stairs-corner-inner.glb" id="15_hfaol"]
+[ext_resource type="PackedScene" uid="uid://cphw0uuofo5j" path="res://assets/starter_kit/stairs-corner.glb" id="16_8jhrh"]
+[ext_resource type="PackedScene" uid="uid://dr5xx7uhowqc2" path="res://assets/starter_kit/stairs.glb" id="17_tq3j4"]
+[ext_resource type="PackedScene" uid="uid://nl2p4gn2t5ke" path="res://assets/starter_kit/statue.glb" id="18_jethr"]
+[ext_resource type="PackedScene" uid="uid://gaivtq4jlu8u" path="res://assets/starter_kit/tree.glb" id="19_m0441"]
+[ext_resource type="PackedScene" uid="uid://c6djdyyexv0ax" path="res://assets/starter_kit/trophy.glb" id="20_ap3at"]
+[ext_resource type="PackedScene" uid="uid://c02x4gktaww46" path="res://assets/starter_kit/wall-corner.glb" id="21_v52bx"]
+[ext_resource type="PackedScene" uid="uid://c2ak8n453so1a" path="res://assets/starter_kit/wall-gate.glb" id="22_g7byc"]
+[ext_resource type="PackedScene" uid="uid://cyx5534vfnmet" path="res://assets/starter_kit/wall.glb" id="23_ojghf"]
+[ext_resource type="PackedScene" uid="uid://dwf4kcwuwcan4" path="res://assets/starter_kit/weapon-rack.glb" id="24_lfjle"]
+[ext_resource type="PackedScene" uid="uid://cuiupy264bna8" path="res://assets/starter_kit/weapon-spear.glb" id="25_j05ic"]
+[ext_resource type="PackedScene" uid="uid://bnm83q6iqa5tt" path="res://assets/starter_kit/weapon-sword.glb" id="26_ntkyr"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="banner2" parent="." instance=ExtResource("1_dpcup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="block2" parent="." instance=ExtResource("2_54e3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="border-corner2" parent="." instance=ExtResource("3_t8l1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="border-straight2" parent="." instance=ExtResource("4_tr1fu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="bricks2" parent="." instance=ExtResource("5_d6ujd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="character-soldier2" parent="." instance=ExtResource("6_xtfon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="column-damaged2" parent="." instance=ExtResource("7_cg1vd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="column2" parent="." instance=ExtResource("8_6xomm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="floor-detail2" parent="." instance=ExtResource("9_tjj1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="floor2" parent="." instance=ExtResource("10_uq4pb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="grass" parent="." instance=ExtResource("11_bcru2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="grass_large" parent="." instance=ExtResource("12_8ofhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="grass_leafs" parent="." instance=ExtResource("13_y1idv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="ground_grass" parent="." instance=ExtResource("14_fsfsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="stairs-corner-inner2" parent="." instance=ExtResource("15_hfaol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="stairs-corner2" parent="." instance=ExtResource("16_8jhrh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="stairs2" parent="." instance=ExtResource("17_tq3j4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="statue2" parent="." instance=ExtResource("18_jethr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="tree2" parent="." instance=ExtResource("19_m0441")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="trophy2" parent="." instance=ExtResource("20_ap3at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="wall-corner2" parent="." instance=ExtResource("21_v52bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="wall-gate2" parent="." instance=ExtResource("22_g7byc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="wall2" parent="." instance=ExtResource("23_ojghf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="weapon-rack2" parent="." instance=ExtResource("24_lfjle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="weapon-spear2" parent="." instance=ExtResource("25_j05ic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)
+
+[node name="weapon-sword2" parent="." instance=ExtResource("26_ntkyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0449729, 0, -0.000869751)

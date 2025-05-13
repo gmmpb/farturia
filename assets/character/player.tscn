@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d33wsgplse56t"]
+
+[ext_resource type="Script" uid="uid://bbwl16o36wbrb" path="res://player.gd" id="1_pgkuf"]
+[ext_resource type="PackedScene" uid="uid://cshf00s3imm74" path="res://assets/character/Characters/gltf/Knight.glb" id="3_j3eqw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pgkuf"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_pgkuf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.615, 0, 0, 0, 2.615, 0, 0, 0, 2.615, 0, 1.02199, 0)
+shape = SubResource("BoxShape3D_pgkuf")
+
+[node name="Knight" parent="." instance=ExtResource("3_j3eqw")]
